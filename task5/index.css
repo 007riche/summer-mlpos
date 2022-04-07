@@ -1,0 +1,64 @@
+/*font-family: 'Raleway', sans-serif;
+font-family: 'Roboto', sans-serif; */
+
+*::selection {
+    color: beige;
+    background-color: #252525;
+}
+
+nav {
+    height: 4em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+}
+
+.baner { 
+height: 25ex;
+margin-top: 15px;
+background-image: url("img/intrusion.png");
+background-size: cover;
+width: auto;
+ } 
+
+ p {
+text-align: justify;
+font-family: 'Raleway', sans-serif;
+font-size: 400;
+font-style: normal;
+}
+
+figure {
+    text-align: center;
+    align-content: center;
+}
+
+img {
+    text-align: center;
+}
+
+body :nth-child(2) 
+{
+    margin-top: 15px;
+}
+
+img.profile {
+    width: 150px;
+    height: 150px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black;
+    
+}
+
+footer {
+    margin-top: 50px;
+    min-height: 100px;
+    width: auto;
+    font-size: 1.5em;
+    
+}
+
+.card {
+    /* background-color: black; */
+    border: none;
+}

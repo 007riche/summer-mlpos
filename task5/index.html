@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confusion matrix in evaluation of intrusion detection systems</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,
+    700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="icon" href="img/intrusion.png" sizes="32x32" />
+</head>
+<body>
+    
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Summer internship</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Task 5</a>
+                    </li>
+                    
+                </ul>
+               
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="baner"></div>
+    </div>
+
+    <div class="card border-0 " style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img class="profile rounded-circle" src="img/Profile.jpg" alt="profile image">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">@007riche</h5>
+             <p class="card-text"><small class="text-muted ">5mins read</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <h1>
+    Confusion matrix in evaluation of intrusion detection systems
+        </h1>
+<p>Cybercrimes are these crimes that are committed using computers and include mainly online financial fraud crimes, cyberterrorism, computer as a tool, 
+    computer as a target types of crimes that consist of phishing scams, identity theft, etc... 
+    These crimes may harm people’s security and even their financial health. Through the last decade, the number of this 
+    type of crime increased rapidly that conversely has led to development of some mitigation tools such as intrusion detection systems used to analyze network traffic
+     in real time in order to detect malicious intention and take some actions. 
+    This article is an overview of confusion matrix in intrusion detection systems. </p>
+    
+<h2>What is confusion matrix?</h2>
+<p>A confusion matrix is a type of table construct that plays a specific role in machine learning and related engineering. 
+    It helps to show the prediction and recall in a system where the values of the test data are known. 
+    The confusion matrix usually treats binary classification type of problems where the number of possible values of the results is two.</p>
+<p>In binary classification type of problems such intrusion detection, the confusion matrix is a technique that helps to summarize the performance of classification of
+    the model of the machine learning algorithm, classification which is based on a set of data where the final outcome is already known from a historical record.</p>
+    
+    <figure class="figure">
+        <img src="img/eXBC.png" class="figure-img img-fluid rounded" alt="...">
+        <figcaption class="figure-caption">Figure: example of binary classification model</figcaption>
+      </figure>
+<p>
+    The confusion matrix consists a matrix of dimension equal to two where the columns are the outcome predicted values and the rows the actual values which are already known.
+</p>
+
+<figure class="figure">
+  <img src="img/CCM.png" class="figure-img img-fluid rounded" alt="...">
+  <figcaption class="figure-caption">Figure: example of confusion matrix</figcaption>
+</figure>
+   <h2>Meaning of confusion matrix table in intrusion detection</h2> 
+The confusion matrix of an intrusion detection system can be presented as follow:
+
+<figure class="figure">
+  <img src="img/CyCM.png" class="figure-img img-fluid rounded" alt="...">
+  <figcaption class="figure-caption">Figure: confusion matrix of an IDS</figcaption>
+</figure>
+
+<p>
+    It is to be recalled that the purpose of an IDS is to prevent against attack by detecting these attack that might be going in real time are labeled as positive values (label “Attack”), 
+    so, conversely the Normal values here means that there is no active attack going on, so they are negative (labeled “Normal”).
+The followings are the possibilities to classify events and depicted in the above table:
+<ul>
+    <li><h4>True positive (TP):</h4> Intrusions that are successfully detected by the IDS. So, the network is undergoing attacks and some decision should be taken to mitigate them.</li>
+    <li><h4>False positive (FP):</h4> Normal/non-intrusive behavior that is wrongly classified as intrusive by the IDS. The traffic is under normal situation</li>
+    <li><h4>True Negative (TN):</h4> Normal/non-intrusive behavior that is successfully labeled as normal/non-intrusive by the IDS. The model successfully classified attacks as attack</li>
+    <li><h4>False Negative (FN):</h4> Intrusions that are missed by the IDS, and classified as normal/non-intrusive. Here the model classified the attacks’ traffic as normal.</li>
+</ul>
+
+</p>
+   <h2> Let’s take a close look at some values of this matrix:</h2>
+<p>
+    The confusion matrix gives an overview of the performance of the model at glance. Some important things to notice here are the FALSE cases:
+<h3> The false positive:</h3> in real life and in classical model, this is usually also known as Type 1 Error and is known to be the most dangerous type of error in the machine 
+    learning because this case is classified not dangerous where the real danger is really happening. Here, according to our target (detect attack), this case instead 
+    falls under the type 2. This means that here it is false alarm, and there is no attack happening.
+
+</p>
+<p>
+    <h3>The false Negative:</h3>
+ in classical type of problems, this case is usually known to be the less dangerous or the type 2 error. 
+    But here, it is to be recalled that the target of the model in the intrusion detection is to find intrusion as its’ name suggests, and from the above 
+    table, we can clearly see that this present case falls under the type 1 error, as the systems fails to detect some intrusion, which can be critical to a
+    corporation, considering as example, an attack which aims to steal very sensitive informations as in case of a Bank. 
+</p>
+<p>
+In real enterprises, the security operation team in companies are really preoccupied by these two errors and mostly by the type 1 error as at the end, 
+    team members can not fully rely on their infrastructure. This can be explained by the fact that no machine learning model can give absolutely right answer 
+    (zero percent of error). To mitigate these situations, they can perform proactivation (this is out of the scope this article). <br>
+
+    The confusion matrix of IDS has lead to some metrics:
+
+One of the most commonly used metrics while performing classification is accuracy. 
+The accuracy of a model (through a confusion matrix) is calculated using the given formula below:  <br>
+
+<figure class="figure">
+  <img src="img/accuracy.png" class="figure-img img-fluid rounded" alt="...">
+  <figcaption class="figure-caption">Figure: Formula of accuracy</figcaption>
+</figure> <br>
+Precision and recall are widely used and popular metrics for classification. <br> 
+
+<p>
+    Precision shows how accurate the model is for predicting positive values. 
+    Thus, it measures the accuracy of a predicted positive outcome. It is also known as the positive predictive value. 
+    The formula to calcite the precision is:
+</p>
+
+<figure class="figure">
+  <img src="img/precision.png" class="figure-img img-fluid rounded" alt="...">
+  <figcaption class="figure-caption">Figure: Formula of precision</figcaption>
+</figure> <br>
+
+Recall is useful to measure the strength of a model to predict positive outcomes, and it is also known as the sensitivity of a model. 
+The formula to calculate the recall is as follow: <br>
+
+<figure class="figure">
+  <img src="img/recall.png" class="figure-img img-fluid rounded" alt="...">
+  <figcaption class="figure-caption">Figure: Formula of recall</figcaption>
+</figure> <br>
+
+<p>
+    F-measure is also known as F-value which uses both precision score and recall score of a classifier. 
+    F-measure is another commonly used metric in classification settings. 
+    F-measure is calculated using a weighted harmonic mean between precision and recall. 
+    For the classification of positive instances, it helps to understand the tradeoff between correctness and coverage. 
+    The general formula for calculating F-measure is given below:
+</p>
+
+<figure class="figure">
+  <img src="img/Fbeta.png" class="figure-img img-fluid rounded" alt="...">
+  <figcaption class="figure-caption">Figure: Formula of F-measure</figcaption>
+</figure> <br>
+
+<p>
+    In the above formulation, the importance of each term can be provided using different values for b. 
+    Most commonly used value for b is 1, which is known as F-1 measure. 
+    G-measure is similar to that of F-measure, but it uses geometric mean instead of harmonic mean.
+</p> 
+
+<figure class="figure">
+  <img src="img/Fmeasure.png" class="figure-img img-fluid rounded" alt="...">
+  <figcaption class="figure-caption">Figure: Formula of F-1</figcaption>
+</figure> <br>
+
+
+<figure class="figure">
+  <img src="img/Gmeasure.png" class="figure-img img-fluid rounded" alt="...">
+  <figcaption class="figure-caption">Figure: Formula of G-measure</figcaption>
+</figure>
+
+<h2>Conclusion</h2>
+<p>
+    In short, the first thing not to forget is that no model of machine learning is perfectly accurate and we have 
+    to keep an eye on the faults of our model. 
+    To evaluate  model performance many techniques have been developed, some of them based on the confusion matrix.  
+</p>
+
+
+</div>
+
+<footer class="container-md text-warning bg-dark bg-gradient">#worldrecordholder #training #internship  #makingindiafutureready 
+    #summer #summertraining #python #machinelearning #docker #rightmentor #deepknowledge #linuxworld #vimaldaga #righteducation
+</footer>
+</body>
+</html>
